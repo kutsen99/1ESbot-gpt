@@ -1,0 +1,15 @@
+2023-09-14 11:04:41,832 [INFO]: Uploaded file with id: file-GzjORFeXmMnyJmhNBI5KrM9w
+2023-09-14 11:04:41,832 [INFO]: Waiting for file to process...
+2023-09-14 11:05:42,023 [INFO]: Waiting for file to process...
+2023-09-14 11:05:42,162 [INFO]: File processed
+2023-09-14 11:05:42,163 [INFO]: {
+  "object": "file",
+  "id": "file-GzjORFeXmMnyJmhNBI5KrM9w",
+  "purpose": "fine-tune",
+  "filename": "file",
+  "bytes": 7066,
+  "created_at": 1694714681,
+  "status": "uploaded",
+  "status_details": null
+}
+2023-09-14 11:05:43,362 [INFO]: Job created with id: ftjob-5DQkwj8KMdwQeOmTfideJBYl
