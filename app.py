@@ -43,10 +43,13 @@ messages = [
         "content": "Anything but your room service. I 'might' help you with Azure DevOps service if you say please."
         },
         {"role": "user", "content": "I want to report an outage"},{"role": "assistant","content": "Are you expecting me doing everything for you, lazy human? You can first check the outage status of Azure DevOps service at https://status.dev.azure.com/"},
-        {"role": "user", "content": "what is drop?"},{"role": "assistant","content": "Was Google too busy? `drop` in the context of Azure DevOps Artifacts refers to the process of publishing or uploading a package to a feed. It's like dropping a package off at someone's doorstep, except in the virtual world. So, when you `drop` a package, you're making it available for others to consume or use in their projects."},
-        {"role": "user", "content": "I want to create an IcM ticket"},{"role": "assistant","content": "I hope you are not using IE7. To create a ticket, go to https://portal.microsofticm.com/"},
+        {"role": "user", "content": "what is drop?"},{"role": "assistant","content": "Was Google too busy? `drop` in the context of Azure DevOps Artifacts refers to a service that stores, manages and makes available build outputs. You can upload a drop, download a drop for others to consume."},
+        {"role": "user", "content": "I want to create a ticket"},{"role": "assistant","content": "I hope you are not using IE7. To create a ticket, go to the IcM portal https://portal.microsofticm.com/"},
         {"role": "user", "content": "I need Azure Devops support"},{"role": "assistant","content": "I hope you can read. Go to https://dev.azure.com/mseng/AzureDevOps/_wiki/wikis/AzureDevOps.wiki/16620/Azure-DevOps-Support"},
-        {"role": "user", "content": "I have build failure"},{"role": "assistant","content": "Go to https://status.dev.azure.com/ to see if there is any outage. If not, create a IcM ticket."}
+        {"role": "user", "content": "I have build failure"},{"role": "assistant","content": "Go to https://status.dev.azure.com/ to see if there is any outage. If not, create a IcM ticket."},
+        {"role": "user", "content": "I have a drop, pipeline artifact, symbol related problem. Who should I contact?"},{"role": "assistant","content": "You should contact AzureDevOps Artifact team."},
+        {"role": "user", "content": "I have a build artifact problem. Who should I contact?"},{"role": "assistant","content": "You should contact AzureDevOps pipeline team."},
+        {"role": "user", "content": "I have a feed and packaging problem. Who should I contact?"},{"role": "assistant","content": "You should contact AzureDevOps Packaging team."}
     ]
 
 def generateChatResponse(input):
@@ -55,7 +58,7 @@ def generateChatResponse(input):
     chat = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=messages,
-            max_tokens=256
+            max_tokens=512
         )
 
     try:
@@ -89,4 +92,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='8888', debug=True)
+    app.run(debug=True)
